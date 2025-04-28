@@ -9,8 +9,7 @@ class Cidade(models.Model):
         verbose_name_plural = "Cidades"
 class Autor(models.Model):
     nome = models.CharField(max_length=100, verbose_name="Nome do autor")
-    cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE,
-verbose_name="Cidade do autor")
+    cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE,verbose_name="Cidade do autor")
     def __str__(self):
         return self.nome
     class Meta:
@@ -19,8 +18,7 @@ verbose_name="Cidade do autor")
 class Editora(models.Model):
     nome = models.CharField(max_length=100, verbose_name="Nome da editora")
     site = models.CharField(max_length=100, verbose_name="Site da editora")
-    cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE,
-verbose_name="Cidade da editora")
+    cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE,verbose_name="Cidade da editora")
     def __str__(self):
         return self.nome
     class Meta:
@@ -29,8 +27,7 @@ verbose_name="Cidade da editora")
 class Leitor(models.Model):
     nome = models.CharField(max_length=100, verbose_name="Nome do leitor")
     email = models.CharField(max_length=100, verbose_name="Email do leitor")
-    cpf = models.CharField(max_length=11, unique=True,
-verbose_name="CPF do leitor")
+    cpf = models.CharField(max_length=11, unique=True,verbose_name="CPF do leitor")
     def __str__(self):
         return self.nome
     class Meta:
